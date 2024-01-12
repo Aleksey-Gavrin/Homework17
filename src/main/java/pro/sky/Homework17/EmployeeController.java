@@ -8,6 +8,7 @@ import pro.sky.Homework17.exceptions.EmployeeAlreadyAddedException;
 import pro.sky.Homework17.exceptions.EmployeeNotFoundException;
 import pro.sky.Homework17.exceptions.EmployeeStorageIsFullException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -53,6 +54,6 @@ public class EmployeeController {
     }
     @GetMapping ("/printAll")
     public List<Employee> printAllEmployees() {
-        return service.employeeList;
+        return new ArrayList<>(service.employeeList);
     }
 }
